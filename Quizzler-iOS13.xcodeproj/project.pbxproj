@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,9 @@
 		AD7631B622F9851900C6E71B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AD7631B522F9851900C6E71B /* README.md */; };
 		AD7631C122FB176100C6E71B /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7631C022FB176100C6E71B /* Question.swift */; };
 		AD7631C622FC227F00C6E71B /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7631C522FC227F00C6E71B /* QuizBrain.swift */; };
+		DF4488E32C35FD59005C6238 /* QuizService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4488E22C35FD59005C6238 /* QuizService.swift */; };
+		DF4488E62C3608B7005C6238 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = DF4488E52C3608B7005C6238 /* GoogleGenerativeAI */; };
+		DFE3D9D12C3AB80E00C1A026 /* Generative-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFE3D9D02C3AB80E00C1A026 /* Generative-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,8 @@
 		AD7631B522F9851900C6E71B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AD7631C022FB176100C6E71B /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		AD7631C522FC227F00C6E71B /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
+		DF4488E22C35FD59005C6238 /* QuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizService.swift; sourceTree = "<group>"; };
+		DFE3D9D02C3AB80E00C1A026 /* Generative-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Generative-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF4488E62C3608B7005C6238 /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,7 @@
 		AD4BDE4822D878BA005BA4CC /* Quizzler-iOS13 */ = {
 			isa = PBXGroup;
 			children = (
+				DF4488E12C35FD26005C6238 /* Service */,
 				AD4BDE4922D878BA005BA4CC /* AppDelegate.swift */,
 				AD4BDE4B22D878BA005BA4CC /* SceneDelegate.swift */,
 				AD7631C222FC1F7500C6E71B /* Model */,
@@ -100,6 +107,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		DF4488E12C35FD26005C6238 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DF4488E22C35FD59005C6238 /* QuizService.swift */,
+				DFE3D9D02C3AB80E00C1A026 /* Generative-Info.plist */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,6 +132,9 @@
 			dependencies = (
 			);
 			name = "Quizzler-iOS13";
+			packageProductDependencies = (
+				DF4488E52C3608B7005C6238 /* GoogleGenerativeAI */,
+			);
 			productName = "Quizzler-iOS13";
 			productReference = AD4BDE4622D878BA005BA4CC /* Quizzler-iOS13.app */;
 			productType = "com.apple.product-type.application";
@@ -126,8 +145,9 @@
 		AD4BDE3E22D878BA005BA4CC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1520;
 				ORGANIZATIONNAME = "The App Brewery";
 				TargetAttributes = {
 					AD4BDE4522D878BA005BA4CC = {
@@ -144,6 +164,9 @@
 				Base,
 			);
 			mainGroup = AD4BDE3D22D878BA005BA4CC;
+			packageReferences = (
+				DF4488E42C3608B7005C6238 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
+			);
 			productRefGroup = AD4BDE4722D878BA005BA4CC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -161,6 +184,7 @@
 				AD4BDE5622D878BC005BA4CC /* LaunchScreen.storyboard in Resources */,
 				AD4BDE5322D878BC005BA4CC /* Assets.xcassets in Resources */,
 				AD7631B622F9851900C6E71B /* README.md in Resources */,
+				DFE3D9D12C3AB80E00C1A026 /* Generative-Info.plist in Resources */,
 				AD4BDE5122D878BA005BA4CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF4488E32C35FD59005C6238 /* QuizService.swift in Sources */,
 				AD7631C622FC227F00C6E71B /* QuizBrain.swift in Sources */,
 				AD4BDE4E22D878BA005BA4CC /* ViewController.swift in Sources */,
 				AD7631C122FB176100C6E71B /* Question.swift in Sources */,
@@ -228,6 +253,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -238,6 +264,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -288,6 +315,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -298,6 +326,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -372,6 +401,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DF4488E42C3608B7005C6238 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google-gemini/generative-ai-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DF4488E52C3608B7005C6238 /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF4488E42C3608B7005C6238 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AD4BDE3E22D878BA005BA4CC /* Project object */;
 }

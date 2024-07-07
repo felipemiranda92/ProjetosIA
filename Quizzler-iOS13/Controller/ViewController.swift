@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 15.0, *)
 class ViewController: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
@@ -20,7 +21,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        sendMessage()
         updateUI()
     }
 
