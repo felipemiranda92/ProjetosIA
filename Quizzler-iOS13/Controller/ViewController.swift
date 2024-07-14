@@ -16,11 +16,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var falseButton: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
     
+    private var OpenAIServiceSend: OpenAIService = OpenAIService()
+    
     var quizBrain = QuizBrain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        sendMessage()
         updateUI()
     }
 
@@ -49,7 +51,22 @@ class ViewController: UIViewController {
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
     }
-
+    
+    var models = [String]()
+    var textInput = "Qual o pais maior de todos?"
+    func sendMessage() {
+        OpenAIServiceSend.setup()
+        OpenAIServiceSend.send(text: textInput) { response in
+            DispatchQueue.main.async {
+                print(response)
+                self.models.append("ChatGPT" + response)
+                self.textInput = ""
+                print(self.models)
+                }
+            }
+            
+        }
+    
 }
 
 
